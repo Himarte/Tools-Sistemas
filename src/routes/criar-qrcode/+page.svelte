@@ -66,7 +66,7 @@
 			<Input
 				id="link"
 				type="text"
-				placeholder="Link que deseja para o QR-Code"
+				placeholder="Link que deseja para o QR-Code "
 				bind:value={$config.data}
 			/>
 		</Card.Content>
