@@ -78,7 +78,7 @@
 	<div class="flex flex-col items-center gap-2">
 		{@html $svgString}
 		{#if $pngDataURL}
-			<Button href={$pngDataURL} download="qr.png">Download QR as PNG</Button>
+			<Button href={$pngDataURL} download="qr.png">Download QR em PNG</Button>
 		{/if}
 	</div>
 </div>
