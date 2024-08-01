@@ -38,7 +38,7 @@
 <div class="flex h-full w-full flex-col items-center justify-center">
 	<Card.Root class="flex h-3/5 w-1/2 flex-col">
 		<Card.Header>
-			<Card.Title>Gerador de Link para WhatsApp</Card.Title>
+			<Card.Title class="flex w-full justify-center">Gerador de Link para WhatsApp</Card.Title>
 		</Card.Header>
 		<Card.Content class="h-full">
 			<div>

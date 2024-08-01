@@ -59,7 +59,7 @@
 <div class="flex h-full w-full flex-col items-center justify-center gap-10">
 	<Card.Root class="flex w-1/2 flex-col">
 		<Card.Header>
-			<Card.Title>Gerador de QR Code</Card.Title>
+			<Card.Title class="flex w-full justify-center">Gerador de QR Code</Card.Title>
 		</Card.Header>
 		<Card.Content class="flex h-full flex-col gap-2">
 			<Label for="link">Cole o Link:</Label>
