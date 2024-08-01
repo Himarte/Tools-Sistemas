@@ -6,6 +6,8 @@
 	import QrCode from 'lucide-svelte/icons/qr-code';
 	import WhatsLogo from '$lib/img/whats.png';
 	import { Toaster } from '$lib/components/ui/sonner';
+	import Link from 'lucide-svelte/icons/link';
+	import ScanQrCode from 'lucide-svelte/icons/scan-qr-code';
 </script>
 
 <ModeWatcher defaultMode="dark" />
@@ -25,7 +27,10 @@
 			><Button
 				variant="link"
 				href="/criar-link"
-				class="flex h-full w-full items-center justify-center">Criar link</Button
+				class="flex h-full w-full items-center justify-center gap-2"
+			>
+				<Link size={20} />
+				Criar link</Button
 			></Tabs.Content
 		>
 		<Tabs.Content
@@ -33,8 +38,11 @@
 			class="mt-2 h-24 w-[70%] items-center justify-center rounded-lg bg-secondary "
 			><Button
 				variant="link"
-				class="flex h-full w-full items-center justify-center"
-				href="/criar-qrcode">Criar QR-Code</Button
+				class="flex h-full w-full items-center justify-center gap-2"
+				href="/criar-qrcode"
+			>
+				<ScanQrCode />
+				Criar QR-Code</Button
 			></Tabs.Content
 		>
 	</Tabs.Root>

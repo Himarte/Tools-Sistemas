@@ -36,28 +36,24 @@
 </script>
 
 <div class="flex h-full w-full flex-col items-center justify-center">
-	<Card.Root class="flex h-3/5 w-1/2 flex-col">
+	<Card.Root class="flex  w-1/2 flex-col">
 		<Card.Header>
 			<Card.Title class="flex w-full justify-center">Gerador de Link para WhatsApp</Card.Title>
 		</Card.Header>
-		<Card.Content class="h-full">
+		<Card.Content>
+			<Label for="phone">Número de Telefone:</Label>
+			<Input
+				id="phone"
+				type="text"
+				value={nomeroCelular}
+				placeholder="Inclua o código do país e DDD"
+				on:input={aplicarMascaraTelefone}
+			/>
 			<div>
-				<div>
-					<Label for="phone">Número de Telefone:</Label>
-					<Input
-						id="phone"
-						type="text"
-						value={nomeroCelular}
-						placeholder="Inclua o código do país e DDD"
-						on:input={aplicarMascaraTelefone}
-					/>
-				</div>
-				<div>
-					<Label for="message">Mensagem:</Label>
-					<Textarea id="message" bind:value={message} placeholder="Digite a mensagem" />
-				</div>
-			</div>
-		</Card.Content>
+				<Label for="message">Mensagem:</Label>
+				<Textarea id="message" bind:value={message} placeholder="Digite a mensagem" />
+			</div></Card.Content
+		>
 		<Card.Footer class="flex w-full justify-between">
 			<Button class="h-8" on:click={gerarLink}>Gerar Link</Button>
 			{#if whatsappLink}
