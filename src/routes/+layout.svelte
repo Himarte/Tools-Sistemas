@@ -1,50 +1,34 @@
 <script lang="ts">
 	import '../app.css';
 	import { ModeWatcher } from 'mode-watcher';
-	import * as Tabs from '$lib/components/ui/tabs/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import QrCode from 'lucide-svelte/icons/qr-code';
 	import WhatsLogo from '$lib/img/whats.png';
 	import { Toaster } from '$lib/components/ui/sonner';
-	import Link from 'lucide-svelte/icons/link';
-	import ScanQrCode from 'lucide-svelte/icons/scan-qr-code';
+	import { page } from '$app/stores';
 </script>
 
 <ModeWatcher defaultMode="dark" />
 <Toaster richColors />
 
-<main class="flex h-screen w-full gap-5 p-1">
-	<Tabs.Root value="account" class="flex h-full w-[250px] gap-2 ">
-		<Tabs.List class="flex h-full  flex-col items-center justify-start gap-5 pt-5">
-			<Tabs.Trigger value="account" class="h-12 w-14 opacity-50 data-[state=active]:opacity-100"
-				><img src={WhatsLogo} alt="Logo do whatsapp" /></Tabs.Trigger
-			>
-			<Tabs.Trigger value="password" class="w-14"><QrCode size={40} /></Tabs.Trigger>
-		</Tabs.List>
-		<Tabs.Content
-			value="account"
-			class="mt-2 h-24 w-[70%] items-center justify-center rounded-lg bg-secondary "
-			><Button
-				variant="link"
-				href="/criar-link"
-				class="flex h-full w-full items-center justify-center gap-2"
-			>
-				<Link size={20} />
-				Criar link</Button
-			></Tabs.Content
+<main class="flex h-screen w-full gap-5 p-2">
+	<nav
+		class="flex h-full w-[5%] flex-col items-center justify-start gap-8 rounded-xl bg-secondary pt-10"
+	>
+		<Button
+			href="/criar-link"
+			variant="secondary"
+			class="h-16 w-16 p-2 {$page.url.pathname === '/criar-link'
+				? 'bg-background hover:bg-background'
+				: ''}"><img src={WhatsLogo} alt="Logo do whatsapp" /></Button
 		>
-		<Tabs.Content
-			value="password"
-			class="mt-2 h-24 w-[70%] items-center justify-center rounded-lg bg-secondary "
-			><Button
-				variant="link"
-				class="flex h-full w-full items-center justify-center gap-2"
-				href="/criar-qrcode"
-			>
-				<ScanQrCode />
-				Criar QR-Code</Button
-			></Tabs.Content
+		<Button
+			href="/criar-qrcode"
+			variant="secondary"
+			class="h-16 w-16 p-2 {$page.url.pathname === '/criar-qrcode'
+				? 'bg-background hover:bg-background'
+				: ''}"><QrCode size={40} /></Button
 		>
-	</Tabs.Root>
+	</nav>
 	<slot />
 </main>
