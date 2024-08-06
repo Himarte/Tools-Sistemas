@@ -11,7 +11,7 @@
 <ModeWatcher defaultMode="dark" />
 <Toaster richColors />
 
-<main class="flex h-screen w-full gap-5 p-2">
+<main class="relative flex h-screen w-full gap-5 p-2">
 	<nav
 		class="flex h-full w-[5%] flex-col items-center justify-start gap-8 rounded-xl bg-secondary pt-10"
 	>
