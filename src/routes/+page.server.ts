@@ -11,9 +11,22 @@ export const actions: Actions = {
 	logar: async ({ request }) => {
 		const dados = await request.formData();
 
+		const user = {
+			email: 'sistema',
+			senha: 'mudar123'
+		};
+
 		const email = dados.get('usuario');
 		const senha = dados.get('senha');
 
-		console.log(email, senha);
+		if (email === user.email && senha === user.senha) {
+			console.log('Logado com sucesso');
+
+			return {
+				isLogado: true
+			};
+		} else {
+			console.log('Usuário ou senha inválidos');
+		}
 	}
 };
