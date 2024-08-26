@@ -13,7 +13,7 @@
 	function gerarLink() {
 		const encodedMessage = encodeURIComponent(message);
 		const sanitizedNumber = nomeroCelular.replace(/[^\d]/g, ''); // Remove todos os caracteres não numéricos
-		if (sanitizedNumber.length < 13) {
+		if (sanitizedNumber.length < 12) {
 			toast.error('Número de telefone inválido');
 			return;
 		}
