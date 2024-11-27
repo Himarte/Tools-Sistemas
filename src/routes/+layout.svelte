@@ -29,6 +29,13 @@
 				? 'bg-background hover:bg-background'
 				: ''}"><QrCode size={40} /></Button
 		>
+		<Button
+			href="/case-up-down"
+			variant="secondary"
+			class="h-16 w-16 p-2 {$page.url.pathname === '/case-up-down'
+				? 'bg-background hover:bg-background'
+				: ''}"><QrCode size={40} /></Button
+		>
 	</nav>
 	<slot />
 </main>
